@@ -9,7 +9,8 @@ public class ChatServer {
 
     public static void main(String[] args) {
         System.out.println("Сервер запущен...");
-        try (ServerSocket serverSocket = new ServerSocket(12345)) {
+         int port = Integer.parseInt(System.getenv("PORT") != null ? System.getenv("PORT") : "12345");
+        try (ServerSocket serverSocket = new ServerSocket(port)) {
             // Запускаем поток для чтения сообщений с консоли
             new Thread(() -> {
                 BufferedReader consoleReader = new BufferedReader(new InputStreamReader(System.in));
