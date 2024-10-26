@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -13,6 +12,12 @@
     <div id="messages"></div>
 
     <script>
+        function getMessage() {
+            const message = document.getElementById('message').value;
+            // Здесь вы можете добавить код для обработки или отображения сообщения
+            console.log("Полученное сообщение: " + message);
+        }
+
         function sendMessage() {
             const message = document.getElementById('message').value;
             fetch('/send', {
@@ -24,6 +29,9 @@
             });
             document.getElementById('message').value = '';
         }
+
+        // Вызывайте getMessage при отправке сообщения
+        document.querySelector('button').addEventListener('click', getMessage);
     </script>
 </body>
 </html>
