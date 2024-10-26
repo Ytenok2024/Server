@@ -9,7 +9,7 @@ public class Server {
     private static Gson gson = new Gson();
 
     public static void main(String[] args) {
-        staticFiles.externalLocation("path_to_your_html_files"); // Укажите путь к вашим HTML файлам
+        staticFiles.externalLocation("index.html"); // Укажите путь к вашим HTML файлам
 
         // Обработка отправки сообщения
         post("/send", (request, response) -> {
